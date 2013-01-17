@@ -45,6 +45,7 @@ module Lynx
       instruct(:compact){ '--compact' }
       instruct(:ignore){ |c,table| "--ignore-table=#{c.config.database}.#{table}" }
       instruct(:no_create_info){ '--no-create-info' }
+      instruct(:no_create_db){ '--no-create-db' }
 
       def to_s
         @command.join(' ')

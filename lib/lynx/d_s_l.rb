@@ -35,6 +35,7 @@ module Lynx
         .skip_quote_names
         .compress
         .compact
+        .no_create_db
     end
 
     def data
