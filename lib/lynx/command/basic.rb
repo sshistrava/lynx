@@ -31,7 +31,7 @@ module Lynx
 
       instruct(:mysql){ |c| c.config.mysql }
       instruct(:dump){ |c| c.config.dump }
-      instruct(:with_database){ |c| c.config.database }
+      instruct(:with_database){ |c| "--database=#{c.config.database}" }
       instruct(:sql){ |c, sql| "--execute='#{sql}'" }
       instruct(:batch){ '--batch' }
       instruct(:no_names){ '--skip-column-names' }

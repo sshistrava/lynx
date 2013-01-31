@@ -8,13 +8,10 @@ describe Lynx::Command::Dump do
   end
 
   def test_command
+    @command.with_database
     @command.table('bar')
     @command.where('1=1')
 
-    assert_equal "dump --tables bar --where='1=1'", @command.to_s
-  end
-
-  def test_with_database
-    assert_equal "dump --databases foo", @command.with_database.to_s
+    assert_equal "dump --where='1=1' foo bar", @command.to_s
   end
 end

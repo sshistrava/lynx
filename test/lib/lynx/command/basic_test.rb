@@ -19,7 +19,7 @@ describe Lynx::Command::Basic do
   end
 
   def test_with_database
-    assert_equal 'mysql foo', @command.mysql.with_database.to_s
+    assert_equal 'mysql --database=foo', @command.mysql.with_database.to_s
   end
 
   def test_batch

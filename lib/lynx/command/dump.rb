@@ -6,24 +6,28 @@ module Lynx
       def initialize(*args)
         super(*args)
 
+        @database = '--all-databases'
+        @tables = []
+
         dump
       end
 
       instruct(:where){ |c,condition| "--where='#{condition}'" }
-      instruct(:with_database){ |c| c.database(c.config.database) }
 
-      def database(*args)
-        @command << '--databases' unless args.empty?
-        @command += args
+      def with_database
+        @database = @config.database
 
         self
       end
 
       def table(*args)
-        @command << '--tables' unless args.empty?
-        @command += args
+        @tables += args
 
         self
+      end
+
+      def to_s
+        "#{super} #{@database} #{@tables.join(' ')}"
       end
     end
   end
