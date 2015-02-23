@@ -25,6 +25,7 @@ module Lynx
         @command << "--user=#{config.username}" if config.username
         @command << "--password=#{config.password}" if config.password
         @command << "--host=#{config.host}" if config.host
+        @command << "--socket=#{config.socket}" if config.socket
 
         self
       end

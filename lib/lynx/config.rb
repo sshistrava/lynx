@@ -9,7 +9,7 @@ module Lynx
       @config = config
     end
 
-    [:username, :password, :host, :database].each do |method|
+    [:username, :password, :host, :database, :socket].each do |method|
       define_method(method){ self[method] }
     end
 

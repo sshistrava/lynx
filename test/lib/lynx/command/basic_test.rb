@@ -32,6 +32,12 @@ describe Lynx::Command::Basic do
     end
   end
 
+  def test_authorize_with_socket
+    @command.config.stub(:socket, '/foo/bar') do
+      assert_equal 'mysql --socket=/foo/bar', @command.mysql.authorize.to_s
+    end
+  end
+
   def test_authorize_with_password
     @command.config.stub(:password, 'bar') do
       assert_equal 'mysql --password=bar', @command.mysql.authorize.to_s

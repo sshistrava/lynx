@@ -7,7 +7,8 @@ describe Lynx::Config do
       database: 'lynx',
       username: 'name',
       password: 'pass',
-      host: 'localhost')
+      host: 'localhost',
+      socket: '/foo/bar')
   end
 
   it 'knows the mysql command' do
@@ -32,6 +33,10 @@ describe Lynx::Config do
 
   it 'knows the username' do
     assert_equal 'name', config.username
+  end
+
+  it 'knows the socket' do
+    assert_equal '/foo/bar', config.socket
   end
 
   it 'knows the password' do
