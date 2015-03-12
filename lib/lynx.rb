@@ -34,6 +34,10 @@ module Lynx
       Pipe::Run.new
     end
 
+    def popen(*args)
+      Pipe::POpen.new(*args)
+    end
+
     def get
       Pipe::Get.new
     end
