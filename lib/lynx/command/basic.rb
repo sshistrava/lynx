@@ -21,6 +21,12 @@ module Lynx
         @command = []
       end
 
+      def option(option)
+        @command << option
+
+        self
+      end
+
       def authorize
         @command << "--user=#{config.username}" if config.username
         @command << "--password=#{config.password}" if config.password

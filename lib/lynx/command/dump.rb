@@ -13,6 +13,7 @@ module Lynx
       end
 
       instruct(:where){ |c,condition| "--where='#{condition}'" }
+      instruct(:complete_insert){ '--complete-insert' }
 
       def with_database
         @database = @config.database
