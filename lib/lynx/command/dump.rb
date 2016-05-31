@@ -14,6 +14,7 @@ module Lynx
 
       instruct(:where){ |c,condition| "--where='#{condition}'" }
       instruct(:complete_insert){ '--complete-insert' }
+      instruct(:skip_triggers){ '--skip-triggers' }
 
       def with_database
         @database = @config.database
