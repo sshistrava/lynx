@@ -1,4 +1,5 @@
 require 'lynx/pipe/basic'
+require 'lynx/system_out'
 
 module Lynx
   module Pipe
@@ -8,7 +9,7 @@ module Lynx
       end
 
       def perform(command)
-        system("cat #{@file} | #{command}")
+        SystemOut.run("cat #{@file} | #{command}")
       end
     end
   end

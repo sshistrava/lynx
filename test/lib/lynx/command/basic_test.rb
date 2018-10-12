@@ -38,12 +38,6 @@ describe Lynx::Command::Basic do
     end
   end
 
-  def test_authorize_with_password
-    @command.config.stub(:password, 'bar') do
-      assert_equal 'mysql --password=bar', @command.mysql.authorize.to_s
-    end
-  end
-
   def test_authorize_with_host
     @command.config.stub(:host, 'local') do
       assert_equal 'mysql --host=local', @command.mysql.authorize.to_s

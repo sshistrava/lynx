@@ -1,10 +1,11 @@
 require 'lynx/pipe/basic'
+require 'lynx/system_out'
 
 module Lynx
   module Pipe
     class Run < Basic
       def perform(command)
-        system(command.to_s)
+        SystemOut.run(command.to_s)
       end
     end
   end
