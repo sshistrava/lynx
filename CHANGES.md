@@ -1,5 +1,11 @@
 # master (unreleased)
 
+# 1.0.0
+
+* Removed `--password` support. (sshistrava)
+* Added config file support. (sshistrava)
+* Added `Lynx::Error` for failed commands. (sshistrava)
+
 # 0.4.0
 
 * Added `#option` method to commands for custom options. (panthomakos)
