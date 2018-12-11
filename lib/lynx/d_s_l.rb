@@ -21,11 +21,25 @@ module Lynx
         .sql("create database #{@config.database}")
     end
 
+    def create_database_if_not_exists
+      Command::Basic.new(@config)
+        .mysql
+        .authorize
+        .sql("create database if not exists #{@config.database}")
+    end
+
     def drop_database
       Command::Basic.new(@config)
         .mysql
         .authorize
         .sql("drop database #{@config.database}")
+    end
+
+    def drop_database_if_exists
+      Command::Basic.new(@config)
+        .mysql
+        .authorize
+        .sql("drop database if exists #{@config.database}")
     end
 
     def dump
