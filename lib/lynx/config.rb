@@ -1,8 +1,9 @@
 module Lynx
   class Config
-    MYSQL = ['mysql', '/usr/local/bin/mysql', '/usr/local/mysql/bin/mysql']
+    MYSQL = ['mysql', 'mysql5', '/usr/local/bin/mysql', '/opt/local/bin/mysql5',
+      '/usr/local/mysql/bin/mysql']
 
-    DUMP = ['mysqldump']
+    DUMP = ['mysqldump', 'mysqldump5']
 
     def initialize(config = {})
       @config = config
